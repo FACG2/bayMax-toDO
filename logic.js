@@ -24,14 +24,15 @@ var todoFunctions = {
   },
   markTodo: function(todos, idToMark) {
     return todos.map(function(toDo) {
-      if (toDo.id == idToMark) {
-        toDo.done = toDo.done ? false : true ;
+      var newTodo = Object.assign({}, toDo);
+      if (newTodo.id == idToMark) {
+        newTodo.done = newTodo.done ? false : true ;
       }
-      return toDo;
+      return newTodo;
     })
     // hint: array.map
   },
-  sortTodos: function(todos, sortFunction) {
+  sortTodos: function(todos) {
       return todos.slice(0).sort(function(a, b){return a.id - b.id});
     // hint: array.slice, array.sort
 
