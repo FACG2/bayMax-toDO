@@ -15,27 +15,26 @@ var todoFunctions = {
     return incrementCounter;
   })(),
   addTodo: function(todos, newTodo) {
-    // should leave the input argument todos unchanged
-    // returns a new array, it should contain todos with the newTodo added to the end.
-    // add an id to the newTodo. You can use the generateId function to create an id.
-    // hint: array.concat
+    return todos.concat({id : todoFunctions.generateId() , description: newTodo.description , done: false} )
   },
   deleteTodo: function(todos, idToDelete) {
-    // should leave the input argument todos unchanged
-    // return a new array, this should not contain any todo with an id of idToDelete
-    // hint: array.filter
+    return todos.filter(function(toDo){
+      return toDo.id != idToDelete;
+});
   },
   markTodo: function(todos, idToMark) {
-    // should leave the input argument todos unchanged
-    // in the new todo array, all elements will remain unchanged except the one with id: idToMark
-    // this element will have its done value toggled
+    return todos.map(function(toDo) {
+      if (toDo.id == idToMark) {
+        toDo.done = toDo.done ? false : true ;
+      }
+      return toDo;
+    })
     // hint: array.map
   },
   sortTodos: function(todos, sortFunction) {
-    // stretch goal! Do this last
-    // should leave the input arguement todos unchanged
-    // sortFunction will have same signature as the sort function in array.sort
+      return todos.slice(0).sort(function(a, b){return a.id - b.id});
     // hint: array.slice, array.sort
+
   },
 };
 
