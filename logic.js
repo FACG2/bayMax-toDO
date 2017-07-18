@@ -32,8 +32,8 @@ var todoFunctions = {
     })
     // hint: array.map
   },
-  sortTodos: function(todos) {
-      return todos.slice(0).sort(function(a, b){return a.id - b.id});
+  sortTodos: function(todos, fn) {
+      return todos.slice(0).sort(fn);
     // hint: array.slice, array.sort
 
   },
