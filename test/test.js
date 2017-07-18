@@ -1,62 +1,143 @@
 var test = require('tape');
-var logic = require('../logic');
+var todoFunctions = require('../logic');
 var todoList = [];
-var newTodoElem = { description: 'make smoothie out of things that should really be cooked' };
-var todoList1 = [{ description: 'make tea' }];
-var newTodoElem1 = { description: 'make eggs' };
-var todoList2 = [{ description: 'make tea' }, { description: 'make eggs' }];
-var newTodoElem2 = { description: 'make salad' };
-var todoList3 = [{ id:0,description: 'make tea',done: true}, { description: 'make eggs' }];
-var newTodoElem3 = { description: 'make salad' };
-
-
+var todoList2 = [
+  {
+    id: 1 ,
+    description : "first one",
+    done : true
+  },
+  {
+    id: 2 ,
+    description : "second one",
+    done : false
+  },
+  {
+    id: 4 ,
+    description : "4th one",
+    done : false
+  },
+  {
+    id: 3 ,
+    description : "3rd one",
+    done : true
+  }
+];
+// Add toDo test
 test('addTodo function test', function(t) {
-  var actual = addTodo(todoList, newTodoElem);
+  var actual = todoFunctions.addTodo(todoList, { description: 'make smoothie out of things that should really be cooked' });
   var expected =  [
-     { id: 0,
-    description: make smoothie out of things that should really be cooked,
-    done: false,  }
+     { id: 1,
+    description: "make smoothie out of things that should really be cooked",
+    done: false  }
   ];
-  t.equal(actual, expected, 'addTodo function test pass');
+  t.deepEqual(actual, expected, 'addTodo function test pass');
+  t.end();
+});
 
-  var actual1 = addTodo(todoList1, newTodoElem1);
-  var expected1 =  [
-    { description: 'make tea',},
-    { id: 0,
-      description: 'make eggs',
-      done: false, }
-  ]
-  t.equal(actual1, expected1, 'addTodo works for other values');
-
-  var actual = addTodo(todoList, newTodoElem);
+// Delete toDo test
+test('deleteTodo test', function(t) {
+  var actual = todoFunctions.deleteTodo(todoList2, 1);
   var expected =  [
-     { id: 0,
-    description: make smoothie out of things that should really be cooked,
-    done: false,  }
+    {
+      id: 2 ,
+      description : "second one",
+      done : false
+    },
+    {
+      id: 4 ,
+      description : "4th one",
+      done : false
+    },
+    {
+      id: 3 ,
+      description : "3rd one",
+      done : true
+    }
   ];
-  t.equal(actual, expected, 'addTodo returns the same value when called with the same argument');
+  t.deepEqual(actual, expected, 'addTodo function test pass');
+  t.end();
+});
+// Mark toDo test
+test('addTodo function test', function(t) {
+  var actual = todoFunctions.markTodo(todoList2, 1);
+  var expected =  [
+    {
+      id: 1 ,
+      description : "first one",
+      done : false
+    },
+    {
+      id: 2 ,
+      description : "second one",
+      done : false
+    },
+    {
+      id: 4 ,
+      description : "4th one",
+      done : false
+    },
+    {
+      id: 3 ,
+      description : "3rd one",
+      done : true
+    }
+  ];
+  t.deepEqual(actual, expected, 'markTodo function test pass');
 
-  var actual2 = addTodo(todoList2, newTodoElem2);
-  var expected2 =  [
-    { description: 'make tea',},
-    { description: 'make eggs',},
-    { id: 0,
-      description: 'make salad',
-      done: false, }
-  ]
-  t.equal(actual2, expected2, 'addTodo fworks for other values');
 
-  var actual3 = addTodo(todoList3, newTodoElem3);
-  var expected3 =  [
-    { id: 0,
-      description: 'make tea',
-      done: true, },
-    { description: 'make eggs',},
-    { id: 1,
-      description: 'make salad',
-      done: false, }
-  ]
-  t.equal(actual3, expected3, 'addTodo fworks for other values');
+  actual = todoFunctions.markTodo(todoList2, 4);
+  expected =  [
+    {
+      id: 1 ,
+      description : "first one",
+      done : true
+    },
+    {
+      id: 2 ,
+      description : "second one",
+      done : false
+    },
+    {
+      id: 4 ,
+      description : "4th one",
+      done : true
+    },
+    {
+      id: 3 ,
+      description : "3rd one",
+      done : true
+    }
+  ];
+  t.deepEqual(actual, expected, 'markTodo function pure testing pass');
 
+  t.end();
+});
+//Sort toDo test
+test('Sort function test', function(t) {
+  var actual = todoFunctions.sortTodos(todoList2);
+  var expected =  [
+    {
+      id: 1 ,
+      description : "first one",
+      done : true
+    },
+    {
+      id: 2 ,
+      description : "second one",
+      done : false
+    },
+    {
+      id: 3 ,
+      description : "3rd one",
+      done : true
+    },
+    {
+      id: 4 ,
+      description : "4th one",
+      done : false
+    }
+  ];
+  t.deepEqual(actual, expected, 'addTodo function test pass');
   t.end();
 });
