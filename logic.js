@@ -20,25 +20,29 @@ var todoFunctions = {
     return incrementCounter;
   })(),
   addTodo: function(todos, newTodo) {
-    return todos.concat({id : todoFunctions.generateId() , description: newTodo.description , done: false} )
+    return todos.concat({
+      id: todoFunctions.generateId(),
+      description: newTodo.description,
+      done: false
+    })
   },
   deleteTodo: function(todos, idToDelete) {
-    return todos.filter(function(toDo){
+    return todos.filter(function(toDo) {
       return toDo.id != idToDelete;
-});
+    });
   },
   markTodo: function(todos, idToMark) {
     return todos.map(function(toDo) {
       var newTodo = Object.assign({}, toDo);
       if (newTodo.id == idToMark) {
-        newTodo.done = newTodo.done ? false : true ;
+        newTodo.done = newTodo.done ? false : true;
       }
       return newTodo;
     })
     // hint: array.map
   },
   sortTodos: function(todos, fn) {
-      return todos.slice(0).sort(fn);
+    return todos.slice(0).sort(fn);
     // hint: array.slice, array.sort
 
   },
