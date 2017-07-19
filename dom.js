@@ -21,7 +21,7 @@
       todoNode.innerHTML = todo.description;
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
-    deleteButtonNode.textContent = "Remove";
+    deleteButtonNode.innerHTML = '<i class="fa fa-trash-o" aria-hidden="true"></i>';
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
