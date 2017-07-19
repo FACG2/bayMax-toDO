@@ -59,7 +59,7 @@ test('deleteTodo test', function(t) {
   t.end();
 });
 // Mark toDo test
-test('addTodo function test', function(t) {
+test('markTodo function test', function(t) {
   var actual = todoFunctions.markTodo(todoList2, 1);
   var expected =  [
     {
