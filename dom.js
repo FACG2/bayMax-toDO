@@ -9,7 +9,6 @@
   var se = JSON.parse(localStorage.getItem("mySe1"));
   if (se != null) {
     state = se;
-    console.log(se);
   }
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {

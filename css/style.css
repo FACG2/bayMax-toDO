@@ -45,7 +45,7 @@ h2{
 button {
   background: none;
     border: 0px;
-    color: #888;
+    color: #4e0038;
     font-size: 15px;
     margin: 0;
     font-family: Lato, sans-serif;
@@ -56,11 +56,17 @@ button {
 button:hover {
   color: #0FC57C;
 }
+#ascending , #descending , .fa-location-arrow:before{
+  color: #ff76bc;
+  font-weight: bold;
+
+}
+
 
 label{
   color: WHITE;
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: bold;
+  font-size: 17px;
   padding: 30px 0 10px;
   margin: 0;
   text-transform: uppercase;
