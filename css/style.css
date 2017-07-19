@@ -117,14 +117,20 @@ margin: 6px auto;
 
 
 }
-
+li button{
+  float: right;
+}
 li:hover{
     padding:0 40px;
     background: #e064b8;
 }
 .marked {
-  background-color: red !important;
+  background-color: #f3f3f3 !important;
+  color: rgba(78,0,56,0.8);
   text-decoration: line-through;
+}
+.fa-trash-o{
+  color: red !important;
 }
 input#new-task{
   font-size: 20px;
