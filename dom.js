@@ -1,4 +1,3 @@
-
 // part 2 linking it all together
 // The function here is called an iife,
 // it keeps everything inside hidden from the rest of our application
@@ -6,23 +5,23 @@
   // This is the dom node where we will keep our todo
   const container = document.getElementById('todo-container');
   const addTodoForm = document.getElementById('add-todo');
- 
-
-  var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
-  ]; // this is our initial todoList
-
+  var state = []; // this is our initial todoList
+  var se = JSON.parse(localStorage.getItem("mySe1"));
+  if (se != null) {
+    state = se;
+    console.log(se);
+  }
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
     // you will need to use addEventListener
+    todo.done ? todoNode.classList.add("marked"): todoNode.classList.remove("marked");
 
     // add span holding description
       todoNode.innerHTML = todo.description;
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
+    deleteButtonNode.textContent = "Remove";
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -31,7 +30,7 @@
 
     // add markTodo button
       var markButtonNode = document.createElement('button');
-      markButtonNode.addEventListener('click', function(event) {
+      todoNode.addEventListener('click', function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
       console.log(todo.done);
@@ -55,7 +54,6 @@ function sortMe(fn) {
   var newState = todoFunctions.sortTodos(state, fn);
       update(newState);
 }
-
 */
 
 document.getElementById("ascending").addEventListener('click',function() {
@@ -84,7 +82,7 @@ function sortMe(fn) {
             //document.querySelectorAll('[name="description"]')[0];
       // hint: todoFunctions.addTodo
        var newState = todoFunctions.addTodo(state, {description: description.firstElementChild.value});
-       description.firstElementChild.value = ""; // reset the input field after submitting 
+       description.firstElementChild.value = ""; // reset the input field after submitting
      update(newState);
     });
   }
@@ -93,6 +91,8 @@ function sortMe(fn) {
   var update = function(newState) {
     state = newState;
     renderState(state);
+    localStorage.setItem('mySe1', JSON.stringify(state));
+
   };
 
   // you do not need to change this function
