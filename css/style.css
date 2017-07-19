@@ -26,7 +26,7 @@ body {
   width: 100%;
    margin:0 auto;
    background: rgba(78,0,56,0.8);
-   border-radius: 4px;
+   border-radius: 40px 0;
    -webkit-box-shadow:
        0 5px 15px 1px rgba(0, 0, 0, 0.6),
        0 0 200px 1px rgba(255, 255, 255, 0.5);
@@ -42,6 +42,7 @@ h2{
      color: white;
      text-align: center;
          margin: 0 auto;
+         font-weight: 400;
 }
 #add-todo button{
   font-size: 23px;
@@ -49,7 +50,7 @@ h2{
   padding: 0;
   max-width: 35px;
   position: relative;
-left: -38px;
+left: -50px;
 
 }
 #add-todo button:hover .fa-location-arrow::before{
@@ -74,13 +75,22 @@ button {
 button:hover {
   color: #0FC57C;
 }
-#ascending , #descending , .fa-location-arrow:before{
-  color: #ff76bc;
+ .fa-location-arrow:before{
+  color: #901884;
   font-weight: bold;
 
 }
+#todo-container , #todo-container label{
+  font-size: 16px;
+  padding: 0;
 
-
+}
+#todo-container button{
+  color: white;
+}
+#todo-container>button:hover{
+font-weight: 600;
+}
 label{
   color: WHITE;
   font-weight: bold;
@@ -94,6 +104,8 @@ label{
 #add-todo{
   margin-left: 10px;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: flex-end;
   }
 
 ul{
@@ -106,7 +118,8 @@ li{
   clear:both;
   list-style:none;
   display:block;
-  background: #630f5b;
+  background: #901884;
+  overflow:hidden;
     line-height:32px;
     padding:0 34px;
     transition: ease-out 0.15s;
@@ -129,14 +142,18 @@ li:hover{
   color: rgba(78,0,56,0.8);
   text-decoration: line-through;
 }
+.marked i{
+  color:red;
+}
 .fa-trash-o{
-  color: red !important;
+  color: #c3c3c3;
 }
 input#new-task{
   font-size: 20px;
   float: left;
   width: 80%;
-  margin-bottom: 5px;
+  margin: 0 auto;
+   margin-bottom: 5px;
 }
 
 
