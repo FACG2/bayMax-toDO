@@ -1,170 +1,180 @@
-html{
+html {
   margin: 0;
   padding: 0;
 }
+
 body {
   background: #7200a4;
   color: white;
   font-family: 'Bree Serif', serif;
 }
+
 .container {
   display: block;
   max-width: 600px;
   width: 100%;
   margin: 100px auto 0;
 }
-.smallContainer{
+
+.smallContainer {
   width: 90%;
   margin: 0 auto
-
 }
+
+
 /*#todo-container{
 	width:150px
 }*/
-.myapp{
-  max-width:350px;
+
+.myapp {
+  max-width: 350px;
   width: 100%;
-   margin:0 auto;
-   background: rgba(78,0,56,0.8);
-   border-radius: 40px 0;
-   -webkit-box-shadow:
-       0 5px 15px 1px rgba(0, 0, 0, 0.6),
-       0 0 200px 1px rgba(255, 255, 255, 0.5);
-   box-shadow:
-       0 5px 15px 1px rgba(0, 0, 0, 0.6),
-       0 0 200px 1px rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  background: rgba(78, 0, 56, 0.8);
+  border-radius: 40px 0;
+  -webkit-box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.6), 0 0 200px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.6), 0 0 200px 1px rgba(255, 255, 255, 0.5);
 }
 
-h2{
+h2 {
   line-height: 50px;
-     padding:0 18px;
-     font-size: 1.7em;
-     color: white;
-     text-align: center;
-         margin: 0 auto;
-         font-weight: 400;
+  padding: 0 18px;
+  font-size: 1.7em;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 400;
 }
-#add-todo button{
+
+#add-todo button {
   font-size: 23px;
-  margin:0;
+  margin: 0;
   padding: 0;
   max-width: 35px;
   position: relative;
-left: -50px;
-
+  left: -50px;
 }
-#add-todo button:hover .fa-location-arrow::before{
+
+#add-todo button:hover .fa-location-arrow::before {
   color: red;
 }
-#add-todo input , #add-todo button{
+
+#add-todo input, #add-todo button {
   height: 23px;
   line-height: 35px;
 }
 
 button {
   background: none;
-    border: 0px;
-    color: #4e0038;
-    font-size: 15px;
-    margin: 0;
-    font-family: Lato, sans-serif;
-    cursor: pointer;
-        padding: 11px;
+  border: 0px;
+  color: #4e0038;
+  font-size: 15px;
+  margin: 0;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+  padding: 11px;
 }
 
 button:hover {
   color: #0FC57C;
 }
- .fa-location-arrow:before{
+
+.fa-location-arrow:before {
   color: #901884;
   font-weight: bold;
-
 }
-#todo-container , #todo-container label{
+
+#todo-container, #todo-container label {
   font-size: 16px;
   padding: 0;
-
 }
-#todo-container button{
+
+#todo-container button {
   color: white;
 }
-#todo-container>button:hover{
-font-weight: 600;
+
+#todo-container>button:hover {
+  font-weight: 600;
 }
-label{
+
+label {
   color: WHITE;
   font-weight: bold;
   font-size: 17px;
   padding: 30px 0 10px;
   margin: 0;
   text-transform: uppercase;
-      margin-left: 50px;
+  margin-left: 50px;
 }
 
-#add-todo{
+#add-todo {
   margin-left: 10px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-ul{
-      padding: 0;
-      font-family: 'Indie Flower', cursive;
-
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: flex-end;
 }
 
-li{
-  clear:both;
-  list-style:none;
-  display:block;
+ul {
+  padding: 0;
+  font-family: 'Indie Flower', cursive;
+}
+
+li {
+  clear: both;
+  list-style: none;
+  display: block;
   background: #901884;
-  overflow:hidden;
-    line-height:32px;
-    padding:0 34px;
-    transition: ease-out 0.15s;
-    -webkit-transition: ease-out 0.15s;
-    font-size: 20px;
-    width: 70%;
-margin: 6px auto;
-
-
+  overflow: hidden;
+  line-height: 32px;
+  padding: 0 34px;
+  transition: ease-out 0.15s;
+  -webkit-transition: ease-out 0.15s;
+  font-size: 20px;
+  width: 70%;
+  margin: 6px auto;
 }
-li button{
+
+li button {
   float: right;
 }
-li:hover{
-    padding:0 40px;
-    background: #e064b8;
+
+li:hover {
+  padding: 0 40px;
+  background: #e064b8;
 }
+
 .marked {
   background-color: #f3f3f3 !important;
-  color: rgba(78,0,56,0.8);
+  color: rgba(78, 0, 56, 0.8);
   text-decoration: line-through;
 }
-.marked i{
-  color:red;
+
+.marked i {
+  color: red;
 }
-.fa-trash-o{
+
+.fa-trash-o {
   color: #c3c3c3;
 }
-input#new-task{
+
+input#new-task {
   font-size: 20px;
   float: left;
   width: 80%;
   margin: 0 auto;
-   margin-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+input#submit {
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  float: left;
+  max-width: 15%;
+  margin: 0 auto;
 }
 
 
-input#submit{
-  font-size: 20px;
-  background-color: white;
-      color: black;
-    float: left;
-    max-width: 15%;
-     margin: 0 auto;
-       }
 /*#todo-container{
   width: 10px;
 }*/

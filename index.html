@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="author" content="BayMax">
-    <meta name="description" content="BayMax team portfolio">
-    <meta name="viewport" content="initial-scale=1">
-    <title>tdd todo</title>
 
-     <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Indie+Flower" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="BayMax">
+  <meta name="description" content="BayMax team portfolio">
+  <meta name="viewport" content="initial-scale=1">
+  <title>tdd todo</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Indie+Flower" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
 <body>
   <div class="container">
     <div class="myapp">
-        <label class="new-task"><h2>Add Item</h2></label>
-        <div class="smallContainer">
+      <label class="new-task"><h2>Add Item</h2></label>
+      <div class="smallContainer">
 
-          <form id="add-todo">
-            <input id="new-task" type="text" name="description" value="" required>
-            <button id="submit" type="submit" name="" ><i class="fa fa-location-arrow"></i></button>
-          </form>
+        <form id="add-todo">
+          <input id="new-task" type="text" name="description" value="" required>
+          <button id="submit" type="submit" name=""><i class="fa fa-location-arrow"></i></button>
+        </form>
 
-        <div id = "todo-container">
+        <div id="todo-container">
           <label>Sort:</label>
           <button id="ascending">Ascending</button>
           <button id="descending">Descending</button>
         </div>
+      </div>
     </div>
-  </div>
 
-</div>
-  </body>
-  <script type="text/javascript" src = "./logic.js"></script>
-  <script type="text/javascript" src = "./dom.js"></script>
+  </div>
+</body>
+<script type="text/javascript" src="./logic.js"></script>
+<script type="text/javascript" src="./dom.js"></script>
+
 </html>

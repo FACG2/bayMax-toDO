@@ -15,10 +15,10 @@
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
     // you will need to use addEventListener
-    todo.done ? todoNode.classList.add("marked"): todoNode.classList.remove("marked");
+    todo.done ? todoNode.classList.add("marked") : todoNode.classList.remove("marked");
 
     // add span holding description
-      todoNode.innerHTML = todo.description;
+    todoNode.innerHTML = todo.description;
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
     deleteButtonNode.innerHTML = '<i class="fa fa-trash-o" aria-hidden="true"></i>';
@@ -29,7 +29,7 @@
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
-      todoNode.addEventListener('click', function(event) {
+    todoNode.addEventListener('click', function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
     });
@@ -37,35 +37,40 @@
 
     return todoNode;
   };
-//Sorting things >> lets gooo
-/*
-function ascendingFun() {
-  fn = function(a, b){return a.id - b.id};
-  sortMe(fn);
-}
-function descendingFun() {
-  fn = function(a, b){return b.id - a.id};
-  sortMe(fn);
-}
-function sortMe(fn) {
-  var newState = todoFunctions.sortTodos(state, fn);
-      update(newState);
-}
-*/
+  //Sorting things >> lets gooo
+  /*
+  function ascendingFun() {
+    fn = function(a, b){return a.id - b.id};
+    sortMe(fn);
+  }
+  function descendingFun() {
+    fn = function(a, b){return b.id - a.id};
+    sortMe(fn);
+  }
+  function sortMe(fn) {
+    var newState = todoFunctions.sortTodos(state, fn);
+        update(newState);
+  }
+  */
 
-document.getElementById("ascending").addEventListener('click',function() {
-  var fn = function(a, b){return a.id - b.id};
-  sortMe(fn);
-});
-document.getElementById("descending").addEventListener('click',function() {
-  var  fn = function(a, b){return b.id - a.id};
-  sortMe(fn);
-});
-function sortMe(fn) {
-  var newState = todoFunctions.sortTodos(state, fn);
-  console.log(newState);
-      update(newState);
-}
+  document.getElementById("ascending").addEventListener('click', function() {
+    var fn = function(a, b) {
+      return a.id - b.id
+    };
+    sortMe(fn);
+  });
+  document.getElementById("descending").addEventListener('click', function() {
+    var fn = function(a, b) {
+      return b.id - a.id
+    };
+    sortMe(fn);
+  });
+
+  function sortMe(fn) {
+    var newState = todoFunctions.sortTodos(state, fn);
+    console.log(newState);
+    update(newState);
+  }
 
   // bind create todo form
   if (addTodoForm) {
@@ -73,14 +78,16 @@ function sortMe(fn) {
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
       // what does event.preventDefault do?
       // what is inside event.target?
-       event.preventDefault();
+      event.preventDefault();
 
       var description = event.target;
-            //document.querySelectorAll('[name="description"]')[0];
+      //document.querySelectorAll('[name="description"]')[0];
       // hint: todoFunctions.addTodo
-       var newState = todoFunctions.addTodo(state, {description: description.firstElementChild.value});
-       description.firstElementChild.value = ""; // reset the input field after submitting
-     update(newState);
+      var newState = todoFunctions.addTodo(state, {
+        description: description.firstElementChild.value
+      });
+      description.firstElementChild.value = ""; // reset the input field after submitting
+      update(newState);
     });
   }
 
