@@ -3,26 +3,29 @@ html{
   padding: 0;
 }
 body {
-height: 100vh;
-background: #7200a4;
-color: white;
-font-family: Lato, sans-serif;
-
-
+  background: #7200a4;
+  color: white;
+  font-family: 'Bree Serif', serif;
 }
 .container {
   display: block;
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
   margin: 100px auto 0;
 }
+.smallContainer{
+  width: 90%;
+  margin: 0 auto
 
+}
 /*#todo-container{
 	width:150px
 }*/
 .myapp{
-  width:350px;
+  max-width:350px;
+  width: 100%;
    margin:0 auto;
-   background: #4e0038;
+   background: rgba(78,0,56,0.8);
    border-radius: 4px;
    -webkit-box-shadow:
        0 5px 15px 1px rgba(0, 0, 0, 0.6),
@@ -40,7 +43,22 @@ h2{
      text-align: center;
          margin: 0 auto;
 }
+#add-todo button{
+  font-size: 23px;
+  margin:0;
+  padding: 0;
+  max-width: 35px;
+  position: relative;
+left: -38px;
 
+}
+#add-todo button:hover .fa-location-arrow::before{
+  color: red;
+}
+#add-todo input , #add-todo button{
+  height: 23px;
+  line-height: 35px;
+}
 
 button {
   background: none;
@@ -75,24 +93,28 @@ label{
 
 #add-todo{
   margin-left: 10px;
-    margin-bottom: 5px;}
+    margin-bottom: 5px;
+  }
 
-    ul{
-padding: 0;    }
+ul{
+      padding: 0;
+      font-family: 'Indie Flower', cursive;
 
-/*li * {
-  float: left;
-}*/
+}
+
 li{
   clear:both;
   list-style:none;
   display:block;
-  background: #ff76bc;
+  background: #630f5b;
     line-height:32px;
     padding:0 34px;
     transition: ease-out 0.15s;
     -webkit-transition: ease-out 0.15s;
     font-size: 20px;
+    width: 70%;
+margin: 6px auto;
+
 
 }
 

@@ -6,9 +6,10 @@
   const container = document.getElementById('todo-container');
   const addTodoForm = document.getElementById('add-todo');
   var state = []; // this is our initial todoList
-  var se = JSON.parse(localStorage.getItem("mySe1"));
+  var se = JSON.parse(sessionStorage.getItem("mySe1"));
   if (se != null) {
     state = se;
+    console.log(se);
   }
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
@@ -32,7 +33,6 @@
       todoNode.addEventListener('click', function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
-      console.log(todo.done);
     });
     todoNode.appendChild(markButtonNode);
     // add classes for css
@@ -90,7 +90,7 @@ function sortMe(fn) {
   var update = function(newState) {
     state = newState;
     renderState(state);
-    localStorage.setItem('mySe1', JSON.stringify(state));
+    sessionStorage.setItem('mySe1', JSON.stringify(state));
 
   };
 
