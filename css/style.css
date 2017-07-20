@@ -91,6 +91,9 @@ button:hover {
 
 #todo-container button {
   color: white;
+  font-size: 12px;
+  padding: 5px 5px;
+
 }
 
 #todo-container>button:hover {
