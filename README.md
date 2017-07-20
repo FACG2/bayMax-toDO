@@ -143,3 +143,8 @@ test('Sort function test', function(t) {
 
     5. Editing the ``HTML-index`` file and building the ``CSS-style`` file
     and linking the logic & dom Scripts.
+
+### Note.
+
+* We added new features to the code >> sorting the list ascending and descending.
+* We make a session to save the content of the list when we refresh the page.
