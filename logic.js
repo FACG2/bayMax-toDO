@@ -47,7 +47,6 @@ var todoFunctions = {
     // hint: array.map
   },
   sortTodos: function(todos, fn) {
-    console.log("helllllllllllllllllo"+fn);
     return todos.slice(0).sort(fn);
     // hint: array.slice, array.sort
 

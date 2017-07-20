@@ -102,11 +102,8 @@
       // hint: todoFunctions.addTodo
       var newState = state.map(function(toDo) {
         var newTodo = Object.assign({}, toDo);
-console.log(temp);
         if (newTodo.id == temp) {
-          console.log(newTodo.id);
           newTodo.description = description.firstElementChild.value;
-          console.log(newTodo.description);
         }
         return newTodo;
       });
