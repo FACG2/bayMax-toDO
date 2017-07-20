@@ -6,17 +6,22 @@ var todoFunctions = {
   // todoFunctions.generateId() will give you a unique id
   // You do not need to understand the implementation of this function.
   generateId: (function() {
-    var se2 = JSON.parse(sessionStorage.getItem("mySe2"));
     var idCounter = 0;
-    if (se2 != null) {
-      idCounter = se2;
+    if(typeof sessionStorage != 'undefined'){
+      var se2 = JSON.parse(sessionStorage.getItem("mySe2"));
+      if (se2 != null) {
+        idCounter = se2;
+      }
+      function incrementCounter() {
+        sessionStorage.setItem('mySe2', JSON.stringify(idCounter+=1));
+        return (idCounter);
+      }
     }
-
-    function incrementCounter() {
-      sessionStorage.setItem('mySe2', JSON.stringify(idCounter += 1));
-      return (idCounter);
+    else {
+      function incrementCounter() {
+        return (idCounter+=1);
+      }
     }
-
     return incrementCounter;
   })(),
   addTodo: function(todos, newTodo) {
@@ -42,6 +47,7 @@ var todoFunctions = {
     // hint: array.map
   },
   sortTodos: function(todos, fn) {
+    console.log("helllllllllllllllllo"+fn);
     return todos.slice(0).sort(fn);
     // hint: array.slice, array.sort
 
