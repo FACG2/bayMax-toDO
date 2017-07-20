@@ -55,7 +55,7 @@ test('deleteTodo test', function(t) {
       done : true
     }
   ];
-  t.deepEqual(actual, expected, 'addTodo function test pass');
+  t.deepEqual(actual, expected, 'deleteTodo function test pass');
   t.end();
 });
 // Mark toDo test
@@ -115,7 +115,9 @@ test('markTodo function test', function(t) {
 });
 //Sort toDo test
 test('Sort function test', function(t) {
-  var actual = todoFunctions.sortTodos(todoList2);
+  var actual = todoFunctions.sortTodos(todoList2 , function(a , b) {
+    return a.id - b.id;
+  });
   var expected =  [
     {
       id: 1 ,
@@ -138,6 +140,6 @@ test('Sort function test', function(t) {
       done : false
     }
   ];
-  t.deepEqual(actual, expected, 'addTodo function test pass');
+  t.deepEqual(actual, expected, 'sortTodo function test pass');
   t.end();
 });
